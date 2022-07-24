@@ -20,15 +20,19 @@ class BoundedStack<T> {
     private final int CAPACITY_OK = 1;
     private final int CAPACITY_NIL = 0;
 
+    // конструкторы:
+    // постусловие: создан новый пустой стек
     public BoundedStack(final int capacity) { // конструктор
         this.capacity = capacity;
         clear(capacity);
     }
 
-    public BoundedStack() { // конструктор
+    // постусловие: создан новый пустой стек
+    public BoundedStack() {
         clear(capacity);
-    } // постусловие: создан новый пустой стек
+    }
 
+    // команды:
     // предусловие: количество элементов в стеке меньше максимально допустимого объема
     // постусловие: в конец стека добавлен новый элемент
     public void push(T value) {
@@ -38,15 +42,6 @@ class BoundedStack<T> {
         }
         setCapacityStatus();
     }
-
-    private void setCapacityStatus() {
-        if (stack.size() == capacity) {
-            capacityStatus = CAPACITY_NIL;
-        } else {
-            capacityStatus = CAPACITY_OK;
-        }
-    }
-
 
     // предусловие: стек не пустой
     // постусловие: удален последний элемент стека
@@ -60,6 +55,15 @@ class BoundedStack<T> {
         setCapacityStatus();
     }
 
+    private void setCapacityStatus() {
+        if (stack.size() == capacity) {
+            capacityStatus = CAPACITY_NIL;
+        } else {
+            capacityStatus = CAPACITY_OK;
+        }
+    }
+
+    // запросы:
     // постусловие: стек не содержит элементов
     public void clear(final int capacity) {
         stack = new ArrayList<>(capacity); // пустой список/стек
@@ -81,10 +85,12 @@ class BoundedStack<T> {
         }
         return result;
     }
+
     public int size() {
         return stack.size();
     }
-    // запросы статусов
+
+    //  дополнительные запросы
     public int getPopStatus() {
         return popStatus;
     }
