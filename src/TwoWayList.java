@@ -14,15 +14,15 @@
 
 abstract class ParentList<T> {
     // Статусы
-    int HEAD_STATUS;
-    int TAIL_STATUS;
-    int RIGHT_STATUS;
-    int PUT_RIGHT_STATUS;
-    int PUT_LEFT_STATUS;
-    int REMOVE_STATUS;
-    int REPLACE_STATUS;
-    int FIND_STATUS;
-    int GET_STATUS;
+    private int HEAD_STATUS;
+    private int TAIL_STATUS;
+    private int RIGHT_STATUS;
+    private int PUT_RIGHT_STATUS;
+    private int PUT_LEFT_STATUS;
+    private int REMOVE_STATUS;
+    private int REPLACE_STATUS;
+    private int FIND_STATUS;
+    private int GET_STATUS;
 
     // Конструктор:
     // постусловие: создан новый пустой список
@@ -136,7 +136,7 @@ abstract class ParentList<T> {
 
 }
 
-class LinckedList<T> extends ParentList<T>{
+class LinckedList<T> extends ParentList<T> {
     /******************************************************************************************
      * Конструктор:
      */
@@ -145,7 +145,7 @@ class LinckedList<T> extends ParentList<T>{
     }
 }
 
-public class TwoWayList<T> extends ParentList<T>{
+public class TwoWayList<T> extends ParentList<T> {
     // Статусы
     int LEFT_STATUS;
 
