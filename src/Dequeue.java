@@ -31,7 +31,7 @@ class ParentQueue<T> {
      * Запросы
      */
     // предусловие: очередь не пуста
-    public T getFront() { } // получить элемент из головы очереди
+    public T getFront() { } // получить  значение элемента из головы очереди
 
     public int size() { } // текущий размер очерди
 
@@ -39,10 +39,10 @@ class ParentQueue<T> {
     /*************************************************************************
      * Запросы статусов
      */
-    // успешно; список пуст;
+    // успешно; очередь пуста;
     public boolean getRemoveFrontStatus() { }
 
-    // успешно; элемент не вставлен
+    // успешно; очередь пуста
     public boolean getAddTailStatus() { }
 }
 
@@ -51,7 +51,7 @@ class ParentQueue<T> {
  * Одностороняя очередь FIFO
  * @param <T>
  */
-class Qeque<T> extends ParentQueue<T> {
+class Queue<T> extends ParentQueue<T> {
     /************************************************************************
      * Конструктор
      */
