@@ -44,5 +44,4 @@ public class HashTable<T> {
 
     // успешно; значение отсутствует в таблице;
     public int getRemoveTailStatus() { }
-
 }
